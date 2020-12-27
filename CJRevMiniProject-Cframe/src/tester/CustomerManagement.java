@@ -19,6 +19,7 @@ public class CustomerManagement {
 					+ "\n5. Unsubscribe customer"
 					+ "\n6. Sort based on email"
 					+ "\n7. Change PhoneNo"
+					+ "\n8. Fetch Customer details"
 					+ "\n10. Exit";
 			
 			ArrayList<Customer> allCust = new ArrayList<>();
@@ -83,6 +84,12 @@ public class CustomerManagement {
 						System.out.println("Change phone no page ---------------");
 						System.out.println("Enter email, birthDate(dd-mm-yyyy), password, new phoneNo :");
 						changePhoneNo(allCust, sc.next(), sc.next(), sc.next(), sc.next());
+						break;
+					
+					case 8:
+						System.out.println("Fetch Customer page ----------");
+						System.out.println("Enter email, birthDate(dd-mm-yyyy): ");
+						fetchCustomer(allCust, sc.next(), sc.next());
 						break;
 						
 					case 10:

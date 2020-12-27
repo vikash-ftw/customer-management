@@ -129,6 +129,13 @@ public class CustomerValidations {
 		System.out.println("Successfully Unsubscribed " + rc.getEmail());
 	}
 	
+	public static void fetchCustomer(ArrayList<Customer> allcust, String email, String dob) throws CustomerHandlingException {
+		int idx = allcust.indexOf(new Customer(email, parse(dob)));
+		if(idx < 0) 
+			throw new CustomerHandlingException("Customer not found !!");
+		System.out.println(allcust.get(idx));
+	}
+	
 	// parsing date
 	public static LocalDate  parseDate(String date) {
 		return parse(date);
