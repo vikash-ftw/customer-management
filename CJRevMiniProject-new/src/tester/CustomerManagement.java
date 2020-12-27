@@ -2,7 +2,6 @@ package tester;
 
 import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 import customExcep.CustomerHandlingException;
 import custom_comparator.MyComparison;
@@ -38,7 +37,6 @@ public class CustomerManagement {
 							System.out.println("Enter customer details : email, name, password, regAmount, "
 									+ "dob(yyyy-MM-dd), custType, phone");
 							
-							//STring emial = sc.next();
 							Customer validCustomer = validateAllInputs(allCust, sc.next(), sc.next(), sc.next(), 
 									sc.nextDouble(), sc.next(), sc.next(), sc.next());
 							
@@ -110,11 +108,9 @@ public class CustomerManagement {
 					} // switch ends here
 				} // inner try block ends here
 				catch (Exception e) {
-					e.printStackTrace();
-					if(e instanceof InputMismatchException) {
-						sc.next();
-					}
+					System.out.println(e);
 				}
+				sc.nextLine();
 			}// loop ends here
 		} // outer try ends here
 	}

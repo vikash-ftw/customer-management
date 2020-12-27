@@ -53,7 +53,7 @@ public class CustomerValidations {
 	}
 	
 	//Age validation --- customer's age must be > 21
-	public static LocalDate validateAge(String birthDate)throws CustomerHandlingException { //void
+	public static LocalDate validateAge(String birthDate)throws CustomerHandlingException { 
 		LocalDate dob = parse(birthDate);
 		if(Period.between(dob, currentDate).getYears() <= 21)
 			throw new CustomerHandlingException("Invalid Age !!");
@@ -67,7 +67,7 @@ public class CustomerValidations {
 	}
 	
 	//validate customer Type
-	public static CustomerType validateCustType(String type) { //void
+	public static CustomerType validateCustType(String type) { 
 		return CustomerType.valueOf(type.toUpperCase());
 	}
 	
